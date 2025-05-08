@@ -18,4 +18,4 @@ Esta landing page foi criada para apresentar dois cursos:
 
 1. Clone este repositório para o seu computador:
    ```bash
-   git clone https://github.com/SEU_USUARIO/landingpage.git
+   git clone https://github.com/cleitonvpinheiro/landingpage.git
