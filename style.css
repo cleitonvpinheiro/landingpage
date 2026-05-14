@@ -89,9 +89,18 @@ body {
 
 .video video {
   width: 100%;
-  max-width: 700px;
-  border-radius: 12px;
+  max-width: 480px; /* DIMINUI O TAMANHO */
+  border-radius: 16px;
   margin-top: 20px;
+
+  /* deixa mais bonito */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+/* efeito leve ao passar mouse */
+.video video:hover {
+  transform: scale(1.02);
 }
 
 /* BENEFÍCIOS */
