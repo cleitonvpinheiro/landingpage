@@ -7,9 +7,9 @@
 
 /* GLOBAL */
 body {
-  font-family: Arial, sans-serif;
-  background: #ffffff;
-  color: #222;
+  font-family: 'Inter', Arial, sans-serif;
+  background: #f9fbff;
+  color: #111;
   line-height: 1.6;
 }
 
@@ -21,157 +21,191 @@ body {
 
 /* HERO */
 .hero {
-  background: linear-gradient(135deg, #0e3aff, #001a66);
+  background: radial-gradient(circle at top, #1a4dff, #001a66);
   color: #fff;
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* efeito glow no fundo */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 255, 136, 0.15);
+  filter: blur(120px);
+  top: -100px;
+  right: -100px;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 3.2rem;
+  font-weight: 900;
   margin-bottom: 15px;
+  letter-spacing: -1px;
 }
 
 .hero .sub {
   font-size: 1.3rem;
   margin-bottom: 20px;
-  color: #dbe4ff;
+  color: #c9d6ff;
 }
 
 .hero p {
-  max-width: 600px;
+  max-width: 520px;
   margin: 0 auto 25px;
+  opacity: 0.9;
 }
 
 /* BOTÃO PRINCIPAL */
 .btn-hero {
-  background: #00ff88;
+  background: linear-gradient(135deg, #00ff88, #00cc6a);
   color: #000;
-  padding: 16px 32px;
-  border-radius: 8px;
+  padding: 18px 36px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
   display: inline-block;
   transition: 0.3s;
-  box-shadow: 0 10px 25px rgba(0,255,136,0.3);
+  box-shadow: 0 15px 40px rgba(0,255,136,0.35);
+  position: relative;
+}
+
+/* efeito glow botão */
+.btn-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: rgba(0,255,136,0.4);
+  filter: blur(20px);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.btn-hero:hover::after {
+  opacity: 1;
 }
 
 .btn-hero:hover {
-  transform: translateY(-3px) scale(1.03);
-  background: #00cc6a;
+  transform: translateY(-4px) scale(1.04);
 }
 
 /* IMPACTO */
 .impacto {
-  padding: 70px 20px;
+  padding: 80px 20px;
   text-align: center;
   background: #fff;
 }
 
 .impacto h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 20px;
+  font-weight: 800;
 }
 
 .impacto p {
-  max-width: 700px;
+  max-width: 650px;
   margin: 10px auto;
   color: #555;
 }
 
 /* VÍDEO */
 .video {
-  padding: 70px 20px;
+  padding: 80px 20px;
   text-align: center;
-  background: #f7f9ff;
+  background: linear-gradient(180deg, #f7f9ff, #eef2ff);
 }
 
 .video video {
   width: 100%;
-  max-width: 480px; /* DIMINUI O TAMANHO */
-  border-radius: 16px;
+  max-width: 420px;
+  border-radius: 18px;
   margin-top: 20px;
-
-  /* deixa mais bonito */
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  transition: 0.3s;
-}
-
-/* efeito leve ao passar mouse */
-.video video:hover {
-  transform: scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 }
 
 /* BENEFÍCIOS */
 .beneficios {
   text-align: center;
-  padding: 70px 20px;
+  padding: 80px 20px;
 }
 
 .beneficios h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 40px;
+  font-weight: 800;
 }
 
 .beneficios-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
 }
 
 .beneficio {
-  background: #f7f9ff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.beneficio:hover {
+  transform: translateY(-6px);
 }
 
 /* PRODUTOS */
 .oportunidades {
-  background: #f5f6fa;
-  padding: 70px 20px;
+  background: #f1f4ff;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .oportunidades h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 30px;
+  font-weight: 800;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
 }
 
 /* CARD */
 .card {
   background: #fff;
-  border-radius: 14px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
   padding: 20px;
   transition: 0.3s;
+  overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-10px);
 }
 
 .card img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 15px;
 }
 
 .card h3 {
   margin-bottom: 10px;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .card .desc {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #666;
   margin-bottom: 15px;
 }
@@ -179,53 +213,46 @@ body {
 /* BOTÃO CARD */
 .card .btn {
   display: block;
-  background: #0e3aff;
+  background: linear-gradient(135deg, #0e3aff, #001a66);
   color: #fff;
-  padding: 12px;
-  border-radius: 6px;
+  padding: 14px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .card .btn:hover {
-  background: #001a66;
-}
-
-/* LIVROS */
-.livros {
-  padding: 50px 10px;
-  text-align: center;
-}
-
-.livros h2 {
-  margin-bottom: 30px;
+  opacity: 0.9;
+  transform: scale(1.02);
 }
 
 /* PROVA SOCIAL */
 .prova {
-  background: #0e3aff;
+  background: linear-gradient(135deg, #0e3aff, #001a66);
   color: #fff;
-  padding: 70px 20px;
+  padding: 80px 20px;
   text-align: center;
 }
 
 .prova p {
   margin: 10px 0;
   font-style: italic;
+  opacity: 0.9;
 }
 
 /* CTA FINAL */
 .cta-final {
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
-  background: linear-gradient(135deg, #001a66, #0e3aff);
+  background: radial-gradient(circle, #001a66, #0e3aff);
   color: #fff;
 }
 
 .cta-final h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 15px;
+  font-weight: 900;
 }
 
 .cta-final p {
@@ -234,7 +261,7 @@ body {
 
 /* SOCIAL */
 .social {
-  padding: 50px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
@@ -247,18 +274,17 @@ body {
 }
 
 .social-btn {
-  padding: 12px 20px;
+  padding: 14px 22px;
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
   color: #fff;
-  border-radius: 8px;
+  border-radius: 10px;
   transition: 0.3s;
 }
 
 .social-btn:hover {
   transform: scale(1.08);
-  opacity: 0.9;
 }
 
 .tiktok {
@@ -272,7 +298,7 @@ body {
 /* FOOTER */
 .footer {
   text-align: center;
-  padding: 25px 0;
+  padding: 30px 0;
   background: #0e3aff;
   color: #fff;
   margin-top: 40px;
@@ -280,8 +306,12 @@ body {
 
 /* MOBILE */
 @media (max-width: 600px) {
+  .hero {
+    padding: 80px 20px;
+  }
+
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   .hero .sub {
